@@ -1,0 +1,500 @@
+/* --- Global Context Overrides & Typographic Elements --- */
+.vcs-screen-root {
+  min-height: 100vh;
+  background-color: #faf9f6;
+  padding-bottom: 6rem;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+}
+
+.vcs-screen-root *,
+.vcs-screen-root *::before,
+.vcs-screen-root *::after {
+  box-sizing: inherit;
+}
+
+.text-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.vcs-serif-italic {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-style: italic;
+}
+
+.text-accent {
+  color: #c5a880;
+}
+
+.vcs-meta-tag {
+  font-size: 9px;
+  color: #c5a880;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  display: block;
+}
+
+/* Animation Helper */
+.vcs-animate-fade-in {
+  animation: vcsFadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes vcsFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Title Banner Layout --- */
+.vcs-banner-section {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2dfda;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 640px) {
+  .vcs-banner-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.vcs-banner-container {
+  max-width: 80rem; /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.vcs-banner-title {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.875rem; /* 30px */
+  font-weight: 200;
+  letter-spacing: -0.05em;
+  color: #171717; /* neutral-900 */
+  line-height: 1;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .vcs-banner-title {
+    font-size: 3.125rem; /* 50px */
+  }
+}
+
+.vcs-banner-desc {
+  font-size: 0.75rem;
+  color: #737373; /* neutral-500 */
+  max-width: 32rem; /* 512px */
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.625;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* --- Main Layout Grid Architecture --- */
+.vcs-main-section {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .vcs-main-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .vcs-main-section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.vcs-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .vcs-layout-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 4rem;
+  }
+}
+
+/* Left Sidebar Layout */
+.vcs-sidebar-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .vcs-sidebar-col {
+    grid-column: span 5 / span 5;
+  }
+}
+
+.vcs-sidebar-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vcs-sidebar-title {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.5rem; /* 24px */
+  font-weight: 300;
+  color: #171717;
+  line-height: 1.375;
+  margin: 0;
+}
+
+.vcs-sidebar-desc {
+  font-size: 0.75rem;
+  color: #737373;
+  line-height: 1.625;
+  margin: 0;
+}
+
+.vcs-lounges-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Lounge Information Card Matrix */
+.vcs-lounge-card {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #e2dfda;
+  background-color: #ffffff;
+  border-radius: 0.125rem;
+  transition: border-color 0.2s ease;
+}
+
+.vcs-lounge-card:hover {
+  border-color: rgba(197, 168, 128, 0.4);
+}
+
+.vcs-lounge-icon-box {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #e2dfda;
+  border-radius: 0.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #faf9f6;
+  flex-shrink: 0;
+}
+
+.vcs-lounge-name {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1rem; /* 16px */
+  color: #0a0a0a;
+  margin: 0;
+}
+
+.vcs-lounge-address {
+  font-size: 0.75rem;
+  color: #525252; /* neutral-600 */
+  margin-top: 0.125rem;
+  margin-bottom: 0;
+}
+
+.vcs-lounge-city {
+  font-size: 10px;
+  color: #a3a3a3; /* neutral-400 */
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+/* Digital Identity Links Section */
+.vcs-digital-lines {
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2dfda;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vcs-lines-title {
+  font-size: 0.875rem;
+  color: #262626; /* neutral-800 */
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  margin: 0;
+}
+
+.vcs-lines-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #525252;
+  font-size: 11px;
+}
+
+.vcs-line-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Right Content Column: Direct Inquiry Registry Form */
+.vcs-form-col {
+  background-color: #ffffff;
+  border: 1px solid #e2dfda;
+  padding: 2rem;
+  border-radius: 0.125rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 640px) {
+  .vcs-form-col {
+    padding: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .vcs-form-col {
+    grid-column: span 7 / span 7;
+  }
+}
+
+.vcs-form-header-title {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.25rem; /* 20px */
+  font-weight: 300;
+  color: #171717;
+  border-bottom: 1px solid #e2dfda;
+  padding-bottom: 0.75rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.vcs-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.vcs-grid-two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .vcs-grid-two-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Custom Standard Controls & inputs */
+.vcs-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.vcs-label {
+  font-size: 10px;
+  color: #737373;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.vcs-input {
+  width: 100%;
+  background-color: #faf9f6;
+  border: 1px solid #e2dfda;
+  padding: 0.75rem 0.875rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+  color: #1a1a1a;
+  transition: border-color 0.2s ease;
+  outline: none;
+}
+
+.vcs-input:focus {
+  border-color: #c5a880;
+}
+
+/* Custom Multi-Channel Control Grid Buttons */
+.vcs-channel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.vcs-channel-btn {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid #e2dfda;
+  border-radius: 0.125rem;
+  background-color: #faf9f6;
+  color: #525252;
+  cursor: pointer;
+}
+
+.vcs-channel-btn:hover {
+  border-color: #c5a880;
+}
+
+.vcs-channel-btn.selected {
+  background-color: #171717; /* neutral-900 */
+  color: #ffffff;
+  border-color: #171717;
+}
+
+.vcs-textarea {
+  width: 100%;
+  background-color: #faf9f6;
+  border: 1px solid #e2dfda;
+  padding: 0.875rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+  color: #1a1a1a;
+  line-height: 1.625;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.vcs-textarea:focus {
+  border-color: #c5a880;
+}
+
+.vcs-textarea::placeholder {
+  color: #a3a3a3;
+}
+
+/* Terms Checkbox Row Aligner */
+.vcs-checkbox-row {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.vcs-checkbox {
+  margin-top: 0.125rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.125rem;
+  border: 1px solid #e2dfda;
+  accent-color: #c5a880;
+}
+
+.vcs-checkbox-text {
+  font-size: 9px;
+  color: #a3a3a3;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+/* Form Primary Triggers */
+.vcs-btn-submit {
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  border: none;
+  border-radius: 0.125rem;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.vcs-btn-submit:hover {
+  background-color: #c5a880;
+}
+
+/* --- Confirmed Validation Success Board Drawer --- */
+.vcs-success-panel {
+  background-color: #faf9f6;
+  border: 1px solid rgba(197, 168, 128, 0.4);
+  padding: 2rem;
+  border-radius: 0.125rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vcs-success-icon-box {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid #c5a880;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vcs-success-title {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.125rem; /* 18px */
+  color: #0a0a0a;
+  margin: 0;
+}
+
+.vcs-success-desc {
+  font-size: 0.75rem;
+  color: #737373;
+  line-height: 1.625;
+  max-width: 24rem; /* 384px */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.vcs-success-reset-btn {
+  background: transparent;
+  border: none;
+  font-size: 9px;
+  color: #c5a880;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 0.25rem;
+}
+
+.vcs-success-reset-btn:hover {
+  color: #171717;
+}

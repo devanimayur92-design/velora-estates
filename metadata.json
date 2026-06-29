@@ -1,0 +1,6 @@
+{
+  "name": "Velora Estates",
+  "description": "A luxury real estate portal representing curated architectural masterpieces, exclusive stewardship, and high-end property listings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

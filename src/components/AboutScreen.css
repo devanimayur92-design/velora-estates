@@ -1,0 +1,550 @@
+/* --- Global Utility Styles & Fonts --- */
+.va-about-root {
+  min-height: 100vh;
+  background-color: #faf9f6;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.va-about-root *, 
+.va-about-root *::before, 
+.va-about-root *::after {
+  box-sizing: inherit;
+}
+
+.va-serif-italic {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-style: italic;
+}
+
+.va-meta-tag {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 10px;
+  color: #c5a880;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+  display: block;
+}
+
+.mb-4 { margin-bottom: 1rem; }
+.margin-b-12 { margin-bottom: 3rem; }
+
+/* --- 1. Panoramic Coastal Hero Section --- */
+.va-hero-section {
+  position: relative;
+  height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.va-hero-bg-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.4;
+}
+
+.va-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(125%);
+}
+
+.va-hero-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to top, #faf9f6, rgba(26, 26, 26, 0.3) 30%, rgba(26, 26, 26, 0.4) 100%);
+}
+
+.va-hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 56rem; /* 896px */
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.va-hero-title {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 2.25rem; /* 36px */
+  font-weight: 200;
+  letter-spacing: -0.05em;
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .va-hero-title {
+    font-size: 3.75rem; /* 60px */
+  }
+}
+
+.va-hero-desc {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(226, 223, 218, 0.85);
+  max-width: 36rem; /* 576px */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.625;
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 640px) {
+  .va-hero-desc {
+    font-size: 0.875rem;
+  }
+}
+
+/* --- 2. Our Philosophy Narrative Section --- */
+.va-narrative-section {
+  max-width: 80rem; /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .va-narrative-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .va-narrative-section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.va-narrative-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .va-narrative-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 4rem;
+  }
+}
+
+.va-narrative-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .va-narrative-aside {
+    grid-column: span 4 / span 4;
+  }
+}
+
+.va-mono-badge {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 9px;
+  color: #c5a880;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+  display: block;
+}
+
+.va-narrative-heading {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.875rem; /* 30px */
+  font-weight: 300;
+  color: #1a1a1a;
+  line-height: 1.25;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .va-narrative-heading {
+    font-size: 2.25rem;
+  }
+}
+
+.va-accent-divider {
+  height: 4px;
+  width: 5rem;
+  background-color: rgba(197, 168, 128, 0.6);
+  margin-top: 1rem;
+}
+
+.va-narrative-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  color: rgba(26, 26, 26, 0.8);
+  font-weight: 300;
+  line-height: 1.625;
+  text-align: justify;
+}
+
+@media (min-width: 1024px) {
+  .va-narrative-body {
+    grid-column: span 8 / span 8;
+  }
+}
+
+.va-narrative-body p {
+  margin: 0;
+}
+
+/* --- 3. Core Pillars Layout --- */
+.va-pillars-section {
+  background-color: #ffffff;
+  border-top: 1px solid #e2dfda;
+  border-bottom: 1px solid #e2dfda;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.va-container {
+  max-width: 80rem; /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .va-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .va-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.va-section-header {
+  text-align: center;
+  max-width: 42rem; /* 672px */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.va-pillars-section .va-section-header {
+  margin-bottom: 4rem;
+}
+
+.va-section-title {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.5rem; /* 24px */
+  font-weight: 300;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .va-section-title {
+    font-size: 1.875rem; /* 30px */
+  }
+}
+
+.va-section-subtitle {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 10px;
+  color: rgba(26, 26, 26, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+.va-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .va-pillars-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.va-pillar-card {
+  padding: 2rem;
+  border: 1px solid #e2dfda;
+  border-radius: 0.125rem;
+  background-color: rgba(250, 249, 246, 0.3);
+  transition: border-color 0.2s ease;
+}
+
+.va-pillar-card:hover {
+  border-color: rgba(197, 168, 128, 0.5);
+}
+
+.va-pillar-icon-box {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid rgba(197, 168, 128, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.va-pillar-icon {
+  color: #c5a880;
+  stroke-width: 1.2;
+}
+
+.va-pillar-title {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.125rem; /* 18px */
+  font-weight: 300;
+  color: #1a1a1a;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.va-pillar-desc {
+  font-size: 0.75rem;
+  color: rgba(26, 26, 26, 0.6);
+  line-height: 1.625;
+  font-weight: 300;
+  text-align: justify;
+  margin: 0;
+}
+
+/* --- 4. Le Corbusier Quote Section --- */
+.va-quote-section {
+  background-color: #171717; /* neutral-900 */
+  color: #ffffff;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.va-quote-grid-pattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.05;
+  background-image: radial-gradient(#c5a880 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.va-quote-content {
+  max-width: 56rem; /* 896px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.va-quote-mark {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 2.25rem;
+  color: #c5a880;
+  display: block;
+  margin-bottom: 1rem;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.va-quote-text {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.5rem; /* 24px */
+  font-weight: 200;
+  font-style: italic;
+  color: #faf9f6;
+  line-height: 1.625;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .va-quote-text {
+    font-size: 1.875rem; /* 30px */
+  }
+}
+
+.va-quote-author {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #c5a880;
+  font-weight: 600;
+}
+
+/* --- 5. Final Spaces Gallery Section --- */
+.va-gallery-section {
+  max-width: 80rem; /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .va-gallery-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .va-gallery-section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.va-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .va-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .va-gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.va-gallery-frame {
+  aspect-ratio: 4 / 3;
+  background-color: #f5f5f5; /* neutral-100 */
+  border: 1px solid #e2dfda;
+  overflow: hidden;
+  border-radius: 0.125rem;
+}
+
+.va-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Emulates tailwind 'group-hover:scale-105' configuration */
+.va-gallery-frame:hover .va-gallery-img {
+  transform: scale(1.05);
+}
+
+/* --- 6. Call to Action (CTA) Section --- */
+.va-cta-section {
+  background-color: #ffffff;
+  border-top: 1px solid #e2dfda;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  text-align: center;
+}
+
+.va-cta-container {
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.va-cta-title {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.875rem; /* 30px */
+  font-weight: 300;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.va-cta-desc {
+  font-size: 0.75rem;
+  color: #737373; /* neutral-500 */
+  line-height: 1.625;
+  font-weight: 300;
+  max-width: 28rem; /* 448px */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.va-cta-actions {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.va-btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.125rem;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+.va-btn-primary:hover {
+  background-color: #c5a880;
+}
+
+.va-btn-secondary {
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: #1a1a1a;
+  border: 1px solid #1a1a1a;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  font-weight: 600;
+  border-radius: 0.125rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.va-btn-secondary:hover {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}

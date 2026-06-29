@@ -1,0 +1,578 @@
+/* --- Global Sandbox Configurations & Reset Overrides --- */
+.vth-screen-container {
+  min-height: 100vh;
+  background-color: #faf9f6;
+  display: flex;
+  flex-direction: column;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .vth-screen-container {
+    flex-direction: row;
+  }
+}
+
+.vth-screen-container *,
+.vth-screen-container *::before,
+.vth-screen-container *::after {
+  box-sizing: inherit;
+}
+
+.text-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.vth-serif-italic {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-style: italic;
+}
+
+.vth-underline {
+  text-decoration: underline;
+  color: #c5a880;
+  cursor: pointer;
+}
+
+/* Micro Helpers */
+.mt-0-5 { margin-top: 0.125rem; }
+.mb-1-5 { margin-bottom: 0.375rem; }
+.padding-left-9 { padding-left: 2.25rem; }
+
+/* --- CSS Keyframe Animations --- */
+.vth-animate-fade-in {
+  animation: vthFadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes vthFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Left Editorial Hero Panel Graphic --- */
+.vth-editorial-pane {
+  position: relative;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .vth-editorial-pane {
+    padding: 4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .vth-editorial-pane {
+    width: 50%;
+  }
+}
+
+.vth-editorial-bg-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.4;
+}
+
+.vth-editorial-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(100%) grayscale(100%) contrast(125%);
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vth-editorial-pane:hover .vth-editorial-img {
+  transform: scale(1.05);
+}
+
+.vth-editorial-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to top, #1a1a1a, rgba(26, 26, 26, 0.4) 40%, transparent 100%);
+}
+
+/* Luxury Branded Logo Components */
+.vth-logo-branding {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.vth-logo-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid #c5a880;
+}
+
+.vth-logo-letter {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: #c5a880;
+}
+
+.vth-logo-dashed-inner {
+  position: absolute;
+  top: 0.125rem;
+  right: 0.125rem;
+  bottom: 0.125rem;
+  left: 0.125rem;
+  border: 1px dashed rgba(197, 168, 128, 0.3);
+}
+
+.vth-logo-text-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.vth-logo-title {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.125rem;
+  letter-spacing: 0.25em;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.vth-logo-subtitle {
+  font-size: 8px;
+  letter-spacing: 0.4em;
+  color: #c5a880;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: -0.25rem;
+}
+
+/* Narrative Quote Formats */
+.vth-editorial-narrative {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 28rem; /* 448px */
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .vth-editorial-narrative {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.vth-narrative-tag {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  color: #c5a880;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  display: block;
+  font-weight: 600;
+}
+
+.vth-narrative-heading {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.875rem; /* 30px */
+  font-weight: 200;
+  letter-spacing: -0.025em;
+  line-height: 1.375;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .vth-narrative-heading {
+    font-size: 2.25rem; /* 36px */
+  }
+}
+
+.vth-narrative-desc {
+  font-size: 0.75rem;
+  color: rgba(226, 223, 218, 0.7);
+  line-height: 1.625;
+  font-weight: 300;
+  margin: 0;
+}
+
+.vth-editorial-footer {
+  position: relative;
+  z-index: 10;
+  font-size: 9px;
+  color: rgba(250, 249, 246, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* --- Right Interactive Actions Form Sheet --- */
+.vth-form-pane {
+  background-color: #ffffff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .vth-form-pane {
+    padding: 4rem;
+  }
+}
+@media (min-width: 768px) {
+  .vth-form-pane {
+    width: 50%;
+    padding: 4rem 4rem 4rem 6rem;
+  }
+}
+@media (min-width: 1024px) {
+  .vth-form-pane {
+    padding: 6rem;
+  }
+}
+
+/* Tab Toggle Controller Link System */
+.vth-toggle-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-bottom: 1px solid #e2dfda;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.vth-toggle-btn {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgba(26, 26, 26, 0.4);
+  transition: color 0.2s ease;
+}
+
+.vth-toggle-btn:hover {
+  color: #1a1a1a;
+}
+
+.vth-toggle-btn.active {
+  color: #1a1a1a;
+}
+
+.vth-active-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #c5a880;
+}
+
+/* Core Form Content Definitions */
+.vth-form-title {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.vth-form-subtitle {
+  font-size: 0.75rem;
+  color: rgba(26, 26, 26, 0.5);
+  font-weight: 300;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.vth-form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vth-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.vth-input-label {
+  font-size: 10px;
+  color: rgba(26, 26, 26, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.vth-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.vth-forgot-link {
+  font-size: 9px;
+  color: #c5a880;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+.vth-forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* Composite Input Fields */
+.vth-input-wrapper {
+  position: relative;
+}
+
+.vth-input-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 0.75rem;
+  color: rgba(26, 26, 26, 0.4);
+  pointer-events: none;
+}
+
+.vth-input-field {
+  width: 100%;
+  background-color: #faf9f6;
+  border: 1px solid #e2dfda;
+  padding: 0.75rem 0.875rem;
+  font-size: 0.75rem;
+  border-radius: 0.125rem;
+  color: #1a1a1a;
+  transition: border-color 0.2s ease;
+}
+
+.vth-input-field:focus {
+  outline: none;
+  border-color: #c5a880;
+}
+
+/* Checkbox Alignment Layers */
+.vth-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.vth-checkbox {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.125rem;
+  border: 1px solid #e2dfda;
+  accent-color: #c5a880;
+  cursor: pointer;
+}
+
+.vth-checkbox-label {
+  font-size: 10px;
+  color: rgba(26, 26, 26, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Membership Multi-Role Select Buttons */
+.vth-role-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.vth-role-btn {
+  padding: 0.5rem 0;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  border: 1px solid #e2dfda;
+  background-color: #faf9f6;
+  color: rgba(26, 26, 26, 0.6);
+  border-radius: 0.125rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vth-role-btn:hover {
+  border-color: #c5a880;
+}
+
+.vth-role-btn.selected {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-color: #1a1a1a;
+}
+
+/* NDA Row Definitions */
+.vth-nda-row {
+  display: flex;
+  align-items: start;
+  gap: 0.625rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.vth-nda-label {
+  font-size: 10px;
+  color: rgba(26, 26, 26, 0.6);
+  text-transform: uppercase;
+  line-height: 1.625;
+  letter-spacing: 0.05em;
+}
+
+/* Central Primary Buttons */
+.vth-btn-submit {
+  width: 100%;
+  padding-top: 0.875rem;
+  padding-bottom: 0.875rem;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-weight: 600;
+  border-radius: 0.125rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.vth-btn-submit.bg-dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+.vth-btn-submit.bg-dark:hover {
+  background-color: #c5a880;
+}
+
+.vth-btn-submit.bg-accent {
+  background-color: #c5a880;
+  color: #1a1a1a;
+}
+.vth-btn-submit.bg-accent:hover {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+/* --- 3. Testing Short-Circuit Bypass Panels --- */
+.vth-bypass-panel {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2dfda;
+  background-color: #faf9f6;
+  padding: 1rem;
+  border-radius: 0.125rem;
+  text-align: center;
+}
+
+.vth-bypass-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  font-size: 9px;
+  color: #c5a880;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  margin-bottom: 0.75rem;
+}
+
+.vth-bypass-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.vth-bypass-btn {
+  padding: 0.625rem 0.75rem;
+  background-color: #ffffff;
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  color: #1a1a1a;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 0.125rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.vth-bypass-btn:hover {
+  border-color: #1a1a1a;
+  background-color: #faf9f6;
+}
+
+.vth-bypass-icon {
+  color: #c5a880;
+  flex-shrink: 0;
+}
+
+.vth-bypass-meta {
+  font-size: 8px;
+  color: rgba(26, 26, 26, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* Return Controls Navigation link */
+.vth-return-btn {
+  margin-top: 1.5rem;
+  background: transparent;
+  border: none;
+  text-align: center;
+  font-size: 10px;
+  color: rgba(26, 26, 26, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.vth-return-btn:hover {
+  color: #1a1a1a;
+}
