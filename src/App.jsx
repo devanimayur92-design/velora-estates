@@ -9,6 +9,7 @@ import AuthScreen from "./components/AuthScreen";
 import ProfileDashboard from "./components/ProfileDashboard";
 import AdminDashboard from "./components/AdminDashboard";
 import ContactScreen from "./components/ContactScreen";
+import LandingPage from "./components/Landingpage";
 import "./App.css"; // Import the custom global CSS wrapper file
 
 export default function App() {
@@ -126,6 +127,14 @@ export default function App() {
         <Routes>
           <Route path="/" element={
             <BrowseScreen
+              properties={properties}
+              currentUser={currentUser}
+              onToggleFavorite={handleToggleFavorite}
+            />
+          } />
+
+          <Route path="/landingpage" element={
+            <LandingPage
               properties={properties}
               currentUser={currentUser}
               onToggleFavorite={handleToggleFavorite}

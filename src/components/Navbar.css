@@ -9,7 +9,7 @@
   top: 0;
   z-index: 50;
   width: 100%;
-  background-color: rgba(250, 249, 246, 0.95);
+  background-color: rgba(227, 222, 209, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid #e2dfda;
